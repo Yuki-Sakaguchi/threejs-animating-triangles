@@ -32,11 +32,55 @@ https://user-images.githubusercontent.com/16290220/195996433-c1dac6d2-5b7d-4c19-
 
 https://user-images.githubusercontent.com/16290220/195996394-0711d22b-4186-453a-b3b3-9f1d8387d6b3.mov
 
+```
+float prog = (position.y + 1.0) / 2.0;
+float locprog = clamp((progress - 0.8 * prog) / 0.2, 0.0, 1.0);
+
+transformed = transformed - aCenter;
+transformed *= locprog;
+transformed += aCenter;
+```
+
+
 https://user-images.githubusercontent.com/16290220/195996357-93ac33a1-7ec8-406a-b95a-1452becd3ad6.mov
+
+```
+float prog = (position.y + 1.0) / 2.0;
+float locprog = clamp((progress - 0.8 * prog) / 0.2, 0.0, 1.0);
+
+transformed = transformed - aCenter;
+transformed *= locprog;
+transformed += aCenter;
+transformed = rotate(transformed, vec3(0.0, 1.0, 0.0), aRandom * (1.0 - progress) * 3.14 * 3.0);
+```
+
 
 https://user-images.githubusercontent.com/16290220/195996330-aae2143d-4d9d-4dda-ad2b-7dd8eeab6213.mov
 
+```
+float prog = (position.y + 1.0) / 2.0;
+float locprog = clamp((progress - 0.8 * prog) / 0.2, 0.0, 1.0);
+
+transformed = transformed - aCenter;
+transformed += 3.0 * normal * aRandom * locprog;
+transformed *= (1.0 - locprog);
+transformed += aCenter;
+```
+
 https://user-images.githubusercontent.com/16290220/195996289-c0a90a4e-a9d1-430a-92ad-8dd9687233ee.mov
+
+```
+float prog = (position.x + 1.0) / 2.0;
+float locprog = clamp((progress - 0.8 * prog) / 0.2, 0.0, 1.0);
+
+locprog = progress;
+
+transformed = transformed - aCenter;
+transformed += 3.0 * normal * aRandom * locprog;
+transformed *= (1.0 - locprog);
+transformed += aCenter;
+transformed = rotate(transformed, vec3(0.0, 1.0, 0.0), aRandom * (locprog) * 3.14 * 3.0);
+```
 
 https://user-images.githubusercontent.com/16290220/195996248-f52d329f-2581-46b1-beec-bf3ffa5343d9.mov
 
